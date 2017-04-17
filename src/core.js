@@ -3046,7 +3046,6 @@ Handsontable.Core = function Core(rootElement, userSettings) {
    * @function deselectCell
    */
   this.deselectCell = function() {
-    selection.deselect();
   };
 
   /**
