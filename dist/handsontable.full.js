@@ -4512,7 +4512,7 @@ var domHelpers = ($__helpers_47_dom_47_element__ = _dereq_("helpers/dom/element"
 var domEventHelpers = ($__helpers_47_dom_47_event__ = _dereq_("helpers/dom/event"), $__helpers_47_dom_47_event__ && $__helpers_47_dom_47_event__.__esModule && $__helpers_47_dom_47_event__ || {default: $__helpers_47_dom_47_event__});
 var HELPERS = [arrayHelpers, browserHelpers, dataHelpers, dateHelpers, featureHelpers, functionHelpers, mixedHelpers, numberHelpers, objectHelpers, settingHelpers, stringHelpers, unicodeHelpers];
 var DOM = [domHelpers, domEventHelpers];
-Handsontable.buildDate = 'Mon Apr 03 2017 14:22:01 GMT+0200 (CEST)';
+Handsontable.buildDate = 'Mon Apr 17 2017 11:50:07 GMT-0400 (EDT)';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.31.2';
 var baseVersion = '@@baseVersion';
@@ -5317,7 +5317,6 @@ Handsontable.Core = function Core(rootElement, userSettings) {
       if (priv.settings.currentHeaderClassName || priv.settings.currentRowClassName || priv.settings.currentColClassName) {
         instance.view.wt.selections.highlight.clear();
       }
-      editorManager.destroyEditor();
       selection.refreshBorders();
       removeClass(instance.rootElement, ['ht__selection--rows', 'ht__selection--columns']);
       Handsontable.hooks.run(instance, 'afterDeselect');
@@ -22497,8 +22496,6 @@ function TableView(instance) {
     var outsideClickDeselects = typeof that.settings.outsideClickDeselects === 'function' ? that.settings.outsideClickDeselects(originalTarget) : that.settings.outsideClickDeselects;
     if (outsideClickDeselects) {
       instance.deselectCell();
-    } else {
-      instance.destroyEditor();
     }
   });
   this.eventManager.addEventListener(table, 'selectstart', function(event) {
