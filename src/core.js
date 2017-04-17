@@ -888,7 +888,6 @@ Handsontable.Core = function Core(rootElement, userSettings) {
       if (priv.settings.currentHeaderClassName || priv.settings.currentRowClassName || priv.settings.currentColClassName) {
         instance.view.wt.selections.highlight.clear();
       }
-      editorManager.destroyEditor();
       selection.refreshBorders();
       removeClass(instance.rootElement, ['ht__selection--rows', 'ht__selection--columns']);
       Handsontable.hooks.run(instance, 'afterDeselect');
@@ -3047,7 +3046,6 @@ Handsontable.Core = function Core(rootElement, userSettings) {
    * @function deselectCell
    */
   this.deselectCell = function() {
-    selection.deselect();
   };
 
   /**
