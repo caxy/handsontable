@@ -172,6 +172,12 @@ function WalkontableEvent(instance) {
         dblClickOrigin[1] = null;
 
       } else if (cell.TD === dblClickOrigin[0]) {
+        // Fire onCellDblClick on a single click
+        if (!hasClass(event.realTarget, 'corner')) {
+          dblClickOrigin[0] = null;
+          that.instance.getSetting('onCellDblClick', event, cell.coords, cell.TD, that.instance);
+        }
+
         that.instance.getSetting('onCellMouseUp', event, cell.coords, cell.TD, that.instance);
 
         dblClickOrigin[1] = cell.TD;
