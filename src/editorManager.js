@@ -261,6 +261,7 @@ function EditorManager(instance, priv, selection) {
       }
     }
     // instance.view.wt.update('onCellDblClick', onDblClick);
+    console.log('--- init');
     instance.view.wt.update('onCellMouseDown', onDblClick);
 
     instance.addHook('afterDestroy', function() {
