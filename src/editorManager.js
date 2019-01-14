@@ -260,7 +260,7 @@ function EditorManager(instance, priv, selection) {
         }
       }
     }
-    instance.view.wt.update('onCellDblClick', onDblClick);
+    // instance.view.wt.update('onCellDblClick', onDblClick);
     instance.view.wt.update('onCellMouseDown', onDblClick);
 
     instance.addHook('afterDestroy', function() {
