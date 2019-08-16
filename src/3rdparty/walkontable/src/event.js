@@ -162,7 +162,7 @@ function WalkontableEvent(instance) {
 
       } else if (cell.TD === dblClickOrigin[0]) {
         // Fire onCellDblClick on a single click
-        if (!hasClass(event.realTarget, 'corner')) {
+        if (!hasClass(event.realTarget, 'corner') && event.button !== 2) {
           dblClickOrigin[0] = null;
           that.instance.getSetting('onCellDblClick', event, cell.coords, cell.TD, that.instance);
         }
