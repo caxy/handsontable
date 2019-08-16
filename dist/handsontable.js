@@ -1354,7 +1354,7 @@ function WalkontableEvent(instance) {
         dblClickOrigin[0] = null;
         dblClickOrigin[1] = null;
       } else if (cell.TD === dblClickOrigin[0]) {
-        if (!hasClass(event.realTarget, 'corner')) {
+        if (!hasClass(event.realTarget, 'corner') && event.button !== 2) {
           dblClickOrigin[0] = null;
           that.instance.getSetting('onCellDblClick', event, cell.coords, cell.TD, that.instance);
         }
@@ -4309,7 +4309,7 @@ var domHelpers = ($__helpers_47_dom_47_element__ = _dereq_("helpers/dom/element"
 var domEventHelpers = ($__helpers_47_dom_47_event__ = _dereq_("helpers/dom/event"), $__helpers_47_dom_47_event__ && $__helpers_47_dom_47_event__.__esModule && $__helpers_47_dom_47_event__ || {default: $__helpers_47_dom_47_event__});
 var HELPERS = [arrayHelpers, browserHelpers, dataHelpers, dateHelpers, featureHelpers, functionHelpers, mixedHelpers, numberHelpers, objectHelpers, settingHelpers, stringHelpers, unicodeHelpers];
 var DOM = [domHelpers, domEventHelpers];
-Handsontable.buildDate = 'Mon Jan 14 2019 18:27:14 GMT-0500 (EST)';
+Handsontable.buildDate = 'Fri Aug 16 2019 10:37:05 GMT-0400 (EDT)';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.28.1';
 var baseVersion = '@@baseVersion';
