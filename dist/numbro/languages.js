@@ -1,5 +1,45 @@
 /*!
  * numbro.js language configuration
+ * language : Bulgarian
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'bg',
+        cultureCode: 'bg',
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'И',
+            million: 'А',
+            billion: 'M',
+            trillion: 'T'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'лв.',
+            code: 'BGN'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        this.numbro.culture('bg', language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
  * language : Czech
  * locale: Czech Republic
  * author : Jan Pesa : https://github.com/smajl (based on work from Anatoli Papirovski : https://github.com/apapirovski)
@@ -26,7 +66,8 @@
         currency: {
             symbol: 'Kč',
             position: 'postfix',
-            spaceSeparated: true
+            spaceSeparated: true,
+            code: 'CZK'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -76,7 +117,8 @@
         },
         currency: {
             symbol: 'kr',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'DKK'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -125,7 +167,8 @@
             return '.';
         },
         currency: {
-            symbol: '€'
+            symbol: '€',
+            code: 'EUR'
         }
     };
 
@@ -166,7 +209,8 @@
         },
         currency: {
             symbol: 'CHF',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'CHF'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -219,7 +263,8 @@
         currency: {
             symbol: '€',
             position: 'postfix',
-            spaceSeparated: true
+            spaceSeparated: true,
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4'
@@ -269,7 +314,8 @@
         },
         currency: {
             symbol: 'CHF',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'CHF'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -289,6 +335,46 @@
     // Browser
     if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
         window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Greek (el)
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'el',
+        cultureCode: 'el',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'χ',
+            million: 'ε',
+            billion: 'δ',
+            trillion: 'τ'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: '€',
+            code: 'EUR'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('el', language);
     }
 }.call(typeof window === 'undefined' ? this : window));
 
@@ -323,7 +409,8 @@
         },
         currency: {
             symbol: '$',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'AUD'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -377,7 +464,8 @@
         },
         currency: {
             symbol: '£',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'GBP'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -430,7 +518,8 @@
                         (b === 3) ? 'rd' : 'th';
         },
         currency: {
-            symbol: '€'
+            symbol: '€',
+            code: 'EUR'
         }
     };
 
@@ -475,7 +564,8 @@
         },
         currency: {
             symbol: '$',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'NZD'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -511,8 +601,8 @@
         langLocaleCode: 'en-ZA',
         cultureCode: 'en-ZA',
         delimiters: {
-            thousands: ',',
-            decimal: '.'
+            thousands: ' ',
+            decimal: ','
         },
         abbreviations: {
             thousand: 'k',
@@ -529,7 +619,8 @@
         },
         currency: {
             symbol: 'R',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'ZAR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -584,7 +675,176 @@
         },
         currency: {
             symbol: '$',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'ARS'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Chile
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-CL',
+        cultureCode: 'es-CL',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '$',
+            position: 'prefix',
+            code: 'CLP'
+        },
+        defaults: {
+            currencyFormat: '$0,0'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Colombia
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-CO',
+        cultureCode: 'es-CO',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '€',
+            position: 'postfix',
+            code: 'EUR'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Costa Rica
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-CR',
+        cultureCode: 'es-CR',
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '₡',
+            position: 'postfix',
+            code: 'CRC'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -639,7 +899,288 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Mexico
+ * author : Joe Bordes : https://github.com/joebordes
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-MX',
+        cultureCode: 'es-MX',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '$',
+            position: 'postfix',
+            code: 'MXN'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Nicaragua
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-NI',
+        cultureCode: 'es-NI',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: 'C$',
+            position: 'prefix',
+            code: 'NIO'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Peru
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-PE',
+        cultureCode: 'es-PE',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: 'S/.',
+            position: 'prefix',
+            code: 'PEN'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: Puerto Rico
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-PR',
+        cultureCode: 'es-PR',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '$',
+            position: 'prefix',
+            code: 'USD'
+        },
+        defaults: {
+            currencyFormat: ',4 a'
+        },
+        formats: {
+            fourDigits: '4 a',
+            fullWithTwoDecimals: ',0.00 $',
+            fullWithTwoDecimalsNoCurrency: ',0.00',
+            fullWithNoDecimals: ',0 $'
+        }
+    };
+
+    // CommonJS
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Spanish
+ * locale: El Salvador
+ * author : Gwyn Judd : https://github.com/gwynjudd
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'es-SV',
+        cultureCode: 'es-SV',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'mm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return (b === 1 || b === 3) ? 'er' :
+                (b === 2) ? 'do' :
+                    (b === 7 || b === 0) ? 'mo' :
+                        (b === 8) ? 'vo' :
+                            (b === 9) ? 'no' : 'to';
+        },
+        currency: {
+            symbol: '$',
+            position: 'prefix',
+            code: 'SVC'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -692,7 +1233,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -741,7 +1283,8 @@
             return 'ام';
         },
         currency: {
-            symbol: '﷼'
+            symbol: '﷼',
+            code: 'IRR'
         }
     };
 
@@ -782,7 +1325,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -835,7 +1379,8 @@
                 (b === 3) ? 'rd' : 'th';
         },
         currency: {
-            symbol: '₱'
+            symbol: '₱',
+            code: 'PHP'
         }
     };
 
@@ -877,7 +1422,8 @@
         currency: {
             symbol: '$',
             position: 'postfix',
-            spaceSeparated : true
+            spaceSeparated : true,
+            code: 'USD'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -927,7 +1473,8 @@
         },
         currency: {
             symbol: 'CHF',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'CHF'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -977,7 +1524,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1024,7 +1572,8 @@
         },
         currency: {
             symbol: '₪',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'ILS'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1046,7 +1595,6 @@
         window.numbro.culture(language.cultureCode, language);
     }
 }.call(typeof window === 'undefined' ? this : window));
-
 
 /*!
  * numbro.js language configuration
@@ -1075,7 +1623,8 @@
         },
         currency: {
             symbol: ' Ft',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'HUF'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1095,6 +1644,46 @@
     // Browser
     if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
         window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Indonesian
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'id',
+        cultureCode: 'id',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 'r',
+            million: 'j',
+            billion: 'm',
+            trillion: 't'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'Rp',
+            code: 'IDR'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('id', language);
     }
 }.call(typeof window === 'undefined' ? this : window));
 
@@ -1124,7 +1713,8 @@
             return '°';
         },
         currency: {
-            symbol: 'CHF'
+            symbol: 'CHF',
+            code: 'CHF'
         }
     };
 
@@ -1165,7 +1755,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1215,7 +1806,8 @@
         },
         currency: {
             symbol: '¥',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'JPY'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1264,7 +1856,8 @@
             return '.';
         },
         currency: {
-            symbol: '₩'
+            symbol: '₩',
+            code: 'KPW'
         }
     };
 
@@ -1305,7 +1898,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1351,7 +1945,8 @@
         },
         currency: {
             symbol: 'kr',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'NOK'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1371,6 +1966,46 @@
     // Browser
     if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
         window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Norwegian Bokmål (nb)
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'nb',
+        cultureCode: 'nb',
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 't',
+            million: 'mil',
+            billion: 'mia',
+            trillion: 'b'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'kr',
+            code: 'NOK'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('nb', language);
     }
 }.call(typeof window === 'undefined' ? this : window));
 
@@ -1402,7 +2037,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1453,7 +2089,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1475,6 +2112,46 @@
         window.numbro.culture(language.cultureCode, language);
     }
 }.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Norwegian Nynorsk (nn)
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'nn',
+        cultureCode: 'nn',
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 't',
+            million: 'mil',
+            billion: 'mia',
+            trillion: 'b'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'kr',
+            code: 'NOK'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.language) {
+        window.numbro.language('nn', language);
+    }
+}());
 
 /*!
  * numbro.js language configuration
@@ -1503,7 +2180,8 @@
         },
         currency: {
             symbol: ' zł',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'PLN'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1553,7 +2231,8 @@
         },
         currency: {
             symbol: 'R$',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'BRL'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1603,7 +2282,8 @@
         },
         currency: {
             symbol: '€',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1652,7 +2332,8 @@
         },
         currency: {
             symbol: ' lei',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'RON'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1672,6 +2353,46 @@
     // Browser
     if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
         window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Romanian (ro)
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'ro',
+        cultureCode: 'ro',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'mie',
+            million: 'mln',
+            billion: 'mld',
+            trillion: 't'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'RON',
+            code: 'RON'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('ro', language);
     }
 }.call(typeof window === 'undefined' ? this : window));
 
@@ -1705,7 +2426,8 @@
         },
         currency: {
             symbol: 'руб.',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'RUB'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1758,7 +2480,8 @@
         },
         currency: {
             symbol: '\u20B4',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'UAH'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1809,7 +2532,8 @@
         currency: {
             symbol: '€',
             position: 'postfix',
-            spaceSeparated: true
+            spaceSeparated: true,
+            code: 'EUR'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1831,6 +2555,88 @@
         window.numbro.culture(language.cultureCode, language);
     }
 }.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Slovene
+ * locale: Slovenia
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'sl',
+        cultureCode: 'sl',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'tis.',
+            million: 'mil.',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: '€',
+            code: 'EUR'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('sl', language);
+    }
+}());
+
+/*!
+ * numbro.js language configuration
+ * language : Serbian (sr)
+ * country : Serbia (Cyrillic)
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'sr-Cyrl-RS',
+        cultureCode: 'sr-Cyrl-RS',
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'тыс.',
+            million: 'млн',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'RSD',
+            code: 'RSD'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('sr-Cyrl-RS', language);
+    }
+}());
 
 /*!
  * numbro.js language configuration
@@ -1856,7 +2662,8 @@
         },
         currency: {
             symbol: 'kr',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'SEK'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1906,7 +2713,8 @@
         },
         currency: {
             symbol: '฿',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'THB'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -1991,7 +2799,8 @@
             },
             currency: {
                 symbol: '\u20BA',
-                position: 'postfix'
+                position: 'postfix',
+                code: 'TRY'
             },
             defaults: {
                 currencyFormat: ',4 a'
@@ -2044,7 +2853,8 @@
         },
         currency: {
             symbol: '\u20B4',
-            position: 'postfix'
+            position: 'postfix',
+            code: 'UAH'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -2094,7 +2904,8 @@
         },
         currency: {
             symbol: '¥',
-            position: 'prefix'
+            position: 'prefix',
+            code: 'CNY'
         },
         defaults: {
             currencyFormat: ',4 a'
@@ -2114,6 +2925,88 @@
     // Browser
     if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
         window.numbro.culture(language.cultureCode, language);
+    }
+}.call(typeof window === 'undefined' ? this : window));
+
+/*!
+ * numbro.js language configuration
+ * language : Chinese traditional
+ * locale: Macau
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'zh-MO',
+        cultureCode: 'zh-MO',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: '千',
+            million: '百萬',
+            billion: '十億',
+            trillion: '兆'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: 'MOP',
+            code: 'MOP'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('zh-MO', language);
+    }
+}());
+
+/*!
+ * numbro.js language configuration
+ * language : Chinese simplified
+ * locale: Singapore
+ * author : Tim McIntosh (StayinFront NZ)
+ */
+(function () {
+    'use strict';
+
+    var language = {
+        langLocaleCode: 'zh-SG',
+        cultureCode: 'zh-SG',
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: '千',
+            million: '百万',
+            billion: '十亿',
+            trillion: '兆'
+        },
+        ordinal: function () {
+            return '.';
+        },
+        currency: {
+            symbol: '$',
+            code: 'SGD'
+        }
+    };
+
+    // Node
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = language;
+    }
+    // Browser
+    if (typeof window !== 'undefined' && window.numbro && window.numbro.culture) {
+        window.numbro.culture('zh-SG', language);
     }
 }.call(typeof window === 'undefined' ? this : window));
 
@@ -2143,7 +3036,8 @@
             return '第';
         },
         currency: {
-            symbol: 'NT$'
+            symbol: 'NT$',
+            code: 'TWD'
         }
     };
 

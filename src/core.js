@@ -1008,6 +1008,8 @@ Handsontable.Core = function Core(rootElement, userSettings) {
         }
         /* jshint ignore:end */
       }
+
+      changes[i][3] = changes[i][3].replace(/(\r\n|\n|\r|↵)/gm, '');
     }
     waitingForValidator.checkIfQueueIsEmpty();
 

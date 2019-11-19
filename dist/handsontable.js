@@ -4309,7 +4309,7 @@ var domHelpers = ($__helpers_47_dom_47_element__ = _dereq_("helpers/dom/element"
 var domEventHelpers = ($__helpers_47_dom_47_event__ = _dereq_("helpers/dom/event"), $__helpers_47_dom_47_event__ && $__helpers_47_dom_47_event__.__esModule && $__helpers_47_dom_47_event__ || {default: $__helpers_47_dom_47_event__});
 var HELPERS = [arrayHelpers, browserHelpers, dataHelpers, dateHelpers, featureHelpers, functionHelpers, mixedHelpers, numberHelpers, objectHelpers, settingHelpers, stringHelpers, unicodeHelpers];
 var DOM = [domHelpers, domEventHelpers];
-Handsontable.buildDate = 'Mon Jan 14 2019 18:27:14 GMT-0500 (EST)';
+Handsontable.buildDate = 'Tue Nov 19 2019 11:27:35 GMT-0500 (Eastern Standard Time)';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.28.1';
 var baseVersion = '@@baseVersion';
@@ -5212,6 +5212,7 @@ Handsontable.Core = function Core(rootElement, userSettings) {
           })(i, cellProperties), source);
         }
       }
+      changes[i][3] = changes[i][3].replace(/(\r\n|\n|\r|↵)/gm, '');
     }
     waitingForValidator.checkIfQueueIsEmpty();
     function resolve() {
