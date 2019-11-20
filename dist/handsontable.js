@@ -1377,6 +1377,10 @@ function WalkontableEvent(instance) {
         dblClickOrigin[0] = null;
         dblClickOrigin[1] = null;
       } else if (cell.TD === dblClickOrigin[0]) {
+        if (!hasClass(event.realTarget, 'corner')) {
+          dblClickOrigin[0] = null;
+          that.instance.getSetting('onCellDblClick', event, cell.coords, cell.TD, that.instance);
+        }
         that.instance.getSetting('onCellMouseUp', event, cell.coords, cell.TD, that.instance);
         dblClickOrigin[1] = cell.TD;
         clearTimeout(that.dblClickTimeout[1]);
@@ -4510,7 +4514,7 @@ var domHelpers = ($__helpers_47_dom_47_element__ = _dereq_("helpers/dom/element"
 var domEventHelpers = ($__helpers_47_dom_47_event__ = _dereq_("helpers/dom/event"), $__helpers_47_dom_47_event__ && $__helpers_47_dom_47_event__.__esModule && $__helpers_47_dom_47_event__ || {default: $__helpers_47_dom_47_event__});
 var HELPERS = [arrayHelpers, browserHelpers, dataHelpers, dateHelpers, featureHelpers, functionHelpers, mixedHelpers, numberHelpers, objectHelpers, settingHelpers, stringHelpers, unicodeHelpers];
 var DOM = [domHelpers, domEventHelpers];
-Handsontable.buildDate = 'Mon Apr 17 2017 12:20:10 GMT-0400 (EDT)';
+Handsontable.buildDate = 'Wed Nov 20 2019 12:30:20 GMT-0500 (EST)';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.31.2';
 var baseVersion = '@@baseVersion';
@@ -5433,6 +5437,7 @@ Handsontable.Core = function Core(rootElement, userSettings) {
           })(i, cellProperties), source);
         }
       }
+      changes[i][3] = changes[i][3].replace(/(\r\n|\n|\r|↵)/gm, '');
     }
     waitingForValidator.checkIfQueueIsEmpty();
     function resolve() {
